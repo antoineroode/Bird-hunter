@@ -1,0 +1,10 @@
+package birdhunter;
+
+public class Birdhunter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
