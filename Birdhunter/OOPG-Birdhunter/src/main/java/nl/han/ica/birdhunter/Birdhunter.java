@@ -32,6 +32,9 @@ public class Birdhunter extends GameEngine{
 	@Override
 	public void setupGame() {
 		 createViewWithoutViewport(1920, 1080);
+		 
+		 Hunter h = new Hunter(this);
+		 addGameObject(h, 100, 700);
 		 BirdSpawner b = new BirdSpawner(this, 5);
 		 
 	}

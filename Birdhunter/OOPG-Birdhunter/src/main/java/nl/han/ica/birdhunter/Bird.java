@@ -19,7 +19,7 @@ public class Bird extends AnimatedSpriteObject {
 	private boolean isShot;
 
 	public Bird(Birdhunter world) {
-		super(new Sprite("src/main/java/nl/han/ica/birdhunter/media/bird-sprite.png"), 4);
+		super(new Sprite("src/main/java/nl/han/ica/birdhunter/media/bird.png"), 4);
 		this.world = world;
 		random = new Random();
 		setCurrentFrameIndex(1);

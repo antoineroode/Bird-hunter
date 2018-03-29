@@ -10,14 +10,15 @@ import nl.han.ica.OOPDProcessingEngineHAN.Objects.Sprite;
 import nl.han.ica.waterworld.tiles.BoardsTile;
 import processing.core.PVector;
 
-public class Hunter extends AnimatedSpriteObject implements ICollidableWithTiles{
+public class Hunter extends AnimatedSpriteObject {
 	
 	private Birdhunter world;
 	
 	public Hunter(Birdhunter world) {
-		super(new Sprite("src/main/java/nl/han/ica/waterworld/media/hunter-sprite.png"),3);
+		super(new Sprite("src/main/java/nl/han/ica/birdhunter/media/hunter-sprite.png"),3);
 		this.world = world;
 		setCurrentFrameIndex(1);
+		setFriction(0.1f);
 	}
 	
 	@Override
@@ -36,12 +37,12 @@ public class Hunter extends AnimatedSpriteObject implements ICollidableWithTiles
 	public void keyPressed(int keyCode, char key) {
 
         if (keyCode == world.LEFT) {
-            setDirectionSpeed(270, 10);
+            setDirectionSpeed(270, 15);
             setCurrentFrameIndex(0);
         }
 
         if (keyCode == world.RIGHT) {
-        	setDirectionSpeed(90, 7);
+        	setDirectionSpeed(90, 15);
             setCurrentFrameIndex(2);
         }
 
@@ -50,11 +51,6 @@ public class Hunter extends AnimatedSpriteObject implements ICollidableWithTiles
         }
     }
 
-	@Override
-	public void tileCollisionOccurred(List<CollidedTile> collidedTiles) {
-
-		
-	}
 
 	
 
