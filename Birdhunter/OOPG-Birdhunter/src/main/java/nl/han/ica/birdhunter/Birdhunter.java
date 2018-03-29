@@ -12,6 +12,8 @@ import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileMap;
 import nl.han.ica.OOPDProcessingEngineHAN.Tile.TileType;
 import nl.han.ica.OOPDProcessingEngineHAN.View.EdgeFollowingViewport;
 import nl.han.ica.OOPDProcessingEngineHAN.View.View;
+import nl.han.ica.waterworld.Player;
+import nl.han.ica.waterworld.Swordfish;
 import nl.han.ica.waterworld.tiles.BoardsTile;
 import processing.core.PApplet;
 
@@ -31,6 +33,7 @@ public class Birdhunter extends GameEngine{
 	public void setupGame() {
 		 createViewWithoutViewport(1920, 1080);
 		 BirdSpawner b = new BirdSpawner(this, 5);
+		 
 	}
 
 	@Override
