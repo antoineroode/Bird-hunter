@@ -19,7 +19,7 @@ public class Bird extends AnimatedSpriteObject {
 	private boolean isShot;
 
 	public Bird(Birdhunter world) {
-		super(new Sprite("src/main/java/nl/han/ica/birdhunter/media/bird.png"), 2);
+		super(new Sprite("src/main/java/nl/han/ica/birdhunter/media/bird-sprite.png"), 4);
 		this.world = world;
 		random = new Random();
 		setCurrentFrameIndex(1);
@@ -33,10 +33,10 @@ public class Bird extends AnimatedSpriteObject {
 		setY(birdY);
 		if (vanRechts) {
 			setX(0);
-			setCurrentFrameIndex(1);
+			setCurrentFrameIndex(2);
 		} else {
 			setX(1920);
-			setCurrentFrameIndex(0);
+			setCurrentFrameIndex(1);
 		}
 
 	}
@@ -51,13 +51,14 @@ public class Bird extends AnimatedSpriteObject {
 	@Override
 	public void update() {
 		if (vanRechts) {
-			setDirectionSpeed(90, 10);
+			setDirectionSpeed(90, 7);
 			if (getX() > world.getWidth()) {
 				world.deleteGameObject(this);
 			}
 			
 			if(isShot) {
-				setDirectionSpeed(160, 15);
+				setDirectionSpeed(160, 20);
+				setCurrentFrameIndex(3);
 				if (getY() > 800) {
 					world.deleteGameObject(this);
 				}
@@ -70,7 +71,8 @@ public class Bird extends AnimatedSpriteObject {
 			}
 			
 			if(isShot) {
-				setDirectionSpeed(200, 15);
+				setDirectionSpeed(200, 20);
+				setCurrentFrameIndex(0);
 				if (getY() > 800) {
 					world.deleteGameObject(this);
 				}
